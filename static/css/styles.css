@@ -499,4 +499,7 @@ footer p {
     .foodbanner {
         height: 40vh; 
     }
+    #buttons {
+        flex-direction: column;
+    }
 }
