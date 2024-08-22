@@ -472,12 +472,16 @@ footer p {
     .pdf-container embed {
         width: 100%; /* Take full width of container */
         height: 100%; /* Take full height of container */
-        max-width: none; /* Ensure it stretches as needed */
-        max-height: none; /* Ensure it stretches as needed */
+        max-width: none; 
+        max-height: none; 
     }
    
     .content h2{
         font-size: 1.6rem;
+    }
+
+    .foodbanner {
+        height: 40vh; 
     }
 }
 
@@ -489,7 +493,7 @@ footer p {
 }
 
 .logo {
-    height: auto; /* Adjust height of logo as needed */
+    height: auto;
     width: 50%; /* Maintain aspect ratio */
     z-index: -2;
 }
