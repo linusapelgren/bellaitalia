@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>Bella Italia</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo" height="40">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'home' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'menu' %}">Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'make_reservation' %}">Booking</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="text-center bg-light p-5">
+        <div class="container">
+            <h2>Welcome to Bella Italia</h2>
+            <p class="lead">At Bella Italia we serve the best Italian food in town. Our menu is filled with delicious dishes that will make you feel like you are in Italy. We have a wide selection of pasta, pizza, and other Italian dishes. We also have a great selection of wines to go with your meal. Come and visit us today!</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container text-center my-5">
+            <img src="{% static 'images/italianfood.jpg' %}" alt="Italian food" class="img-fluid">
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Make a reservation</h2>
+                    <p>We want the eating experience to be as easy as possible for you, therefore we have a booking system on our website!</p>
+                    <div class="d-grid gap-2">
+                        <a href="{% url 'make_reservation' %}" class="btn btn-primary">Go to booking page</a>
+                        <a href="{% url 'menu' %}" class="btn btn-outline-primary">Our menu</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src="{% static 'images/pizza.png' %}" alt="Pizza" class="img-fluid" id="pizza">
+                </div>
+            </div>
+        </div>
+
+        <div class="container my-5">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="{% static 'images/openinghours.png' %}" alt="Opening Hours" class="img-fluid">
+                </div>
+                <div class="col-md-6">
+                    <h2>Contact</h2>
+                    <p>+46 701111111</p>
+                    <p>We are located in the heart of the city. Our address is: 123 Main Street, Örebro, Sweden.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-light text-center py-4">
+        <p>&copy; 2021 Bella Italia</p>
+        <ul class="list-inline">
+            <li class="list-inline-item">
+                <a href="https://www.instagram.com" target="_blank" class="text-dark"><i class="fab fa-instagram"></i> Follow us on Instagram</a>
+            </li>
+            <li class="list-inline-item">
+                <a href="https://www.facebook.com" target="_blank" class="text-dark"><i class="fab fa-facebook"></i> Check out our Facebook</a>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'scripts/script.js' %}"></script>
+</body>
+</html>
