@@ -479,10 +479,6 @@ footer p {
     .content h2{
         font-size: 1.6rem;
     }
-
-    .foodbanner {
-        height: 40vh; 
-    }
 }
 
 .logocontainer {
@@ -496,4 +492,11 @@ footer p {
     height: auto;
     width: 50%; /* Maintain aspect ratio */
     z-index: -2;
+}
+
+
+@media only screen and (max-width: 1000px){
+    .foodbanner {
+        height: 40vh; 
+    }
 }
