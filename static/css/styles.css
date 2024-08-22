@@ -481,7 +481,6 @@ footer p {
     }
 }
 
-
 .logocontainer {
     height: 100%; /* Ensure the logocontainer takes full height */
     display: flex;
@@ -490,6 +489,7 @@ footer p {
 }
 
 .logo {
-    height: 100%; /* Adjust height of logo as needed */
-    width: auto; /* Maintain aspect ratio */
+    height: auto; /* Adjust height of logo as needed */
+    width: 50%; /* Maintain aspect ratio */
+    z-index: -2;
 }

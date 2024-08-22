@@ -1,6 +1,5 @@
 from django.db import models
 
-
 class Reservation(models.Model):
     name = models.CharField(max_length=100)
     phone_number = models.CharField(max_length=20)
@@ -12,4 +11,4 @@ class Reservation(models.Model):
         return f"{self.name} - {self.date} - {self.time}"
 
     class Meta:
-        app_label = 'bella_italia'
+        app_label = 'booking'
