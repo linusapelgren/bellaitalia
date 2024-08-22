@@ -3,19 +3,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Meta tags for character set and viewport settings -->
+    {% load static %}
+
+    {% block meta %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Title of the page -->
-    <title>Bella Italia - Reservation Confirmed</title>
-    <!-- Load Django static files -->
-    {% load static %} 
-    <!-- Link to the custom CSS stylesheet -->
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <!-- Favicon for the site -->
+    {% endblock %}
+
+    {% block static %}
     <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
-    <!-- Font Awesome for icons -->
+    {% endblock %}
+    
+    {% block corecss %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">   
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    {% endblock %}
+
+    {% block scripts %}
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+    {% endblock %}
+
+    <title>Bella Italia</title> 
 </head>
 <body>
     <header>
