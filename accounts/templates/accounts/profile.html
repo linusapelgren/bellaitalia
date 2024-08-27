@@ -64,41 +64,15 @@
             </div>
         </div>     
     </header>
-    <section class="welcomebanner">
-        <h2>Welcome to Bella Italia</h2>
-        <p>At Bella Italia we serve the best Italian food in town. Our menu is filled with delicious dishes that will make you feel like you are in Italy. We have a wide selection of pasta, pizza, and other Italian dishes. We also have a great selection of wines to go with your meal. Come and visit us today!</p>
-    </section>
-    <section class="foodbanner">
-        <!-- Banner image of Italian food -->
-        <img src="{% static 'images/italianfood.jpg' %}" alt="Italian food">
-    </section>
-    <section class="content">
-        <div class="row">
-            <div class="container">
-                <h2>Make a reservation</h2>
-                <p>We want the eating experience to be as easy as possible for you, therefore we have a booking system on our website!</p>
-                <ul id="buttons">
-                    <li><a href="{% url 'make_reservation' %}">Go to booking page</a></li>
-                    <li><a href="{% url 'menu' %}">Our menu</a></li>
-                </ul>
-            </div>
-            <div class="imgcontainer">
-                <!-- Image of a pizza -->
-                <img src="{% static 'images/pizza.png' %}" alt="Pizza" id="pizza">
-            </div>
+    <div class="account-info">
+        <div class="user-info">
+            <h2>Account Information</h2>
+            <p>Username: {{ user.username }}</p>
+            <p>Email: {{ user.email }}</p>
+            <p>Phone: {{ user.phone_number }}</p>
         </div>
-        <div class="row2">
-            <div class="imgcontainer2">
-                <!-- Image showing opening hours -->
-                <img src="{% static 'images/openinghours.png' %}" alt="Opening Hours">
-            </div>
-            <div class="container2">
-                <h2>Contact</h2>
-                <p>+46 701111111</p>
-                <p>We are located in the heart of the city. Our address is: 123 Main Street, Örebro, Sweden.</p>
-            </div>
-        </div>
-    </section>
+    </div>
+
     <footer>
         <p>&copy; 2021 Bella Italia</p>
         <nav id="footermenu">
