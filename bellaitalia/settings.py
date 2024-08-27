@@ -64,7 +64,10 @@ ROOT_URLCONF = 'bellaitalia.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        "DIRS": [
+            os.path.join(BASE_DIR, "templates"),
+            os.path.join(BASE_DIR, "templates", "allauth"),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -163,3 +166,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 TWILIO_ACCOUNT_SID = 'AC6bba9430be4f5378c72a84b57ba089ef'
 TWILIO_AUTH_TOKEN= 'ae9f24ce952b080f0c450583a2ef4e7c'
 TWILIO_PHONE_NUMBER = '+46734701154'
+

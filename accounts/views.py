@@ -16,10 +16,7 @@ class CustomSignupView(AllauthSignupView):
 
 @login_required
 def profile(request):
-    """A view to display the user's profile."""
-    user_profile = UserProfile.objects.filter(user=request.user).first()
-    context = {"user_profile": user_profile, "user": request.user}
-    return render(request, "accounts/profile.html", context)
+    return render(request, 'accounts/profile.html')
 
 class CustomPasswordChangeView(PasswordChangeView):
     success_url = reverse_lazy("profile_view")  # Update this to your profile view URL

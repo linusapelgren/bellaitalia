@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    padding: 0;
+    padding-top: 120px;
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
@@ -308,7 +308,6 @@ footer p {
 }
 
 .confirmation-details{
-    border: 2px solid black;
     width: fit-content;
     display: flex;
     justify-content: center;
@@ -316,6 +315,7 @@ footer p {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
+    background-color: whitesmoke;
 }
 
 .confirmation-details ul {
@@ -400,6 +400,46 @@ footer p {
     transition: transform 0.3s ease-in-out;
 }
 
+.logocontainer {
+    height: 100%; /* Ensure the logocontainer takes full height */
+    display: flex;
+    align-items: center; /* Center vertically */
+    padding: 20px;
+}
+
+.logo {
+    height: auto;
+    width: 50%; /* Maintain aspect ratio */
+    z-index: -2;
+}
+
+.user-info{
+    flex-direction: column;
+    border: 1px solid black;
+    width: fit-content;
+    padding: 20px;
+}
+
+.booked-times{
+    flex-direction: column;
+    border: 1px solid black;
+    width: fit-content;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.edit_form{
+    width: 50%;
+    padding: 20px;
+}
+
 /* Adjust the gap within the header for smaller screens */
 @media only screen and (max-width: 1000px) {
     #menu {
@@ -467,33 +507,6 @@ footer p {
     }
 }
 
-.logocontainer {
-    height: 100%; /* Ensure the logocontainer takes full height */
-    display: flex;
-    align-items: center; /* Center vertically */
-    padding: 20px;
-}
-
-.logo {
-    height: auto;
-    width: 50%; /* Maintain aspect ratio */
-    z-index: -2;
-}
-
-.account-info{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 20px;
-}
-
-.user-info{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border: 1px solid black;
-    width: fit-content;
-    padding: 20px;
+.menu{
+    margin-bottom: 10%;
 }

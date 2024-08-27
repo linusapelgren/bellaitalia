@@ -1,5 +1,3 @@
-# bookings/forms.py
-
 from django import forms
 from .models import Reservation
 from datetime import datetime
@@ -15,7 +13,6 @@ class ReservationForm(forms.ModelForm):
         fetch_available_times = kwargs.pop('fetch_available_times', None)
         super().__init__(*args, **kwargs)
 
-        # Get the selected date from form data if available
         if self.data.get('date'):
             date = datetime.strptime(self.data['date'], '%Y-%m-%d').date()
         elif 'initial' in kwargs and 'date' in kwargs['initial']:
@@ -23,17 +20,14 @@ class ReservationForm(forms.ModelForm):
         else:
             date = datetime.today().date()
 
-        # Fetch available times based on the provided date using the function passed
         if fetch_available_times:
             available_times = fetch_available_times(date)
         else:
             available_times = []
 
-        # Populate choices for the time field
         self.fields['time'].choices = [(time_slot, time_slot) for time_slot in available_times]
-
-        # Set initial value for the date field
         self.fields['date'].initial = date
+
     class Meta:
         model = Reservation
         fields = ['name', 'phone_number', 'guests', 'date', 'time']

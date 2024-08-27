@@ -1,70 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% load static %}
-
-    {% block meta %}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% endblock %}
-
-    {% block static %}
-    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
-    {% endblock %}
-    
-    {% block corecss %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">   
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    {% endblock %}
-
-    {% block scripts %}
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
-    {% endblock %}
-
-    <title>Bella Italia</title> 
-</head>
-<body>
-    <header id="header">
-        <div class="logocontainer">
-            <!-- Site logo -->
-            <a href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" alt="Logo" class="logo"></a>
-        </div>
-        <nav id="menu">
-            <ul>
-                <!-- Navigation links -->
-                <li><a href="{% url 'menu' %}">Menu</a></li>
-                <li><a href="{% url 'make_reservation' %}">Booking</a></li>
-            </ul>
-        </nav>
-        <!-- Menu button for small screens -->
-        <div id="menusmallscreen">
-            <button class="menubtn">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-        <!-- Side navigation for small screens -->
-        <div id="sidenav" class="sidenav">
-            <a href="{% url 'menu' %}">Menu</a>
-            <a href="{% url 'make_reservation' %}">Booking</a>
-        </div>
-    </header>
-    <section class="container3">
-        <h2>Our menu</h2>
-        <img src="{% static 'images/menu.png' %}" alt="menu">
-    </section>
-    <footer id="menufooter">
-        <p>&copy; 2021 Bella Italia</p>
-        <nav id="footermenu">
-            <ul>
-                <!-- Social media links -->
-                <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i>Follow us on instagram</a></li>
-                <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i>Check out our facebook</a></li>
-            </ul>
-        </nav>
-    </footer>
-    <!-- Custom JavaScript file -->
-    <script src="{% static 'scripts/script.js' %}"></script>
-</body>
-</html>
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container min-vh-100 d-flex justify-content-center align-items-center" style="flex-direction: column;">
+    <h2>Our menu</h2>
+    <img src="{% static 'images/menu.png' %}" alt="menu" class="menu">
+</div>
+{% endblock %}

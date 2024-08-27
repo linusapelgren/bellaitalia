@@ -1,95 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% load static %}
+{% extends "base.html" %}
+{% load static %}
 
-    {% block meta %}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% endblock %}
-
-    {% block static %}
-    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
-    {% endblock %}
-    
-    {% block corecss %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">   
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    {% endblock %}
-
-    <title>Bella Italia</title> 
-</head>
-<body>
-    <header class="container-fluid fixed-top" id="header">
-        <div class="logocontainer">
-            <!-- Site logo -->
-            <a href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" alt="Logo" class="logo"></a>
-        </div>
-        <nav id="menu">
-            <ul>
-                <!-- Navigation links -->
-                <li><a href="{% url 'menu' %}">Menu</a></li>
-                <li><a href="{% url 'make_reservation' %}">Booking</a></li>
-            </ul>
-        </nav>
-        <!-- Menu button for small screens -->
-        <div class="col-12 col-lg-4 d-flex justify-content-center justify-content-lg-start">
-            <div id="menusmallscreen">
-                <button class="menubtn">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-            <!-- Side navigation for small screens -->
-            <div id="sidenav" class="sidenav">
-                <a href="{% url 'menu' %}">Menu</a>
-                <a href="{% url 'make_reservation' %}">Booking</a>
-            </div>
-        </div>
-        <!-- Dropdown Menu -->
-        <div class="col-12 col-lg-4 d-flex justify-content-center justify-content-lg-end">
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown button
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    {% if request.user.is_authenticated %}
-                        <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
-                        <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
-                    {% else %}
-                        <a class="dropdown-item" href="{% url 'account_signup' %}">Register</a>
-                        <a class="dropdown-item" href="{% url 'account_login' %}">Login</a>
-                    {% endif %}
-                </div>
-            </div>
-        </div>     
-    </header>
-    <div class="account-info">
-        <div class="user-info">
-            <h2>Account Information</h2>
-            <p>Username: {{ user.username }}</p>
-            <p>Email: {{ user.email }}</p>
-            <p>Phone: {{ user.phone_number }}</p>
-        </div>
+{% block content %}
+<h2>User Profile</h2>
+<div class="container min-vh-100 d-flex align-items-center" style="flex-direction: column;">
+    <!-- User Information Section -->
+    <div class="user-info text-center mb-4 d-flex align-items-center" style="width: 40%;">
+        <h2>Account Information</h2>
+        <p>Email: {{ user.email }}</p>
+        <p>Phone: {{ user.phone_number }}</p>
     </div>
+    
+    <!-- Booked Times Section -->
+    <div class="booked-times text-center d-flex align-items-center" style="width: 40%;">
+        <h2>Your Reservations</h2>
+        <ul class="list-unstyled">
+            {% for reservation in user.reservations.all %}
+                <li class="mb-2">
+                    {{ reservation.date }} - {{ reservation.time }} for {{ reservation.guests }} guests
+                    <a href="{% url 'cancel_reservation' reservation.id %}" class="btn btn-danger btn-sm ml-2">Cancel</a>
+                    <a href="{% url 'edit_reservation' reservation.id %}" class="btn btn-primary btn-sm ml-2">Edit</a>
 
-    <footer>
-        <p>&copy; 2021 Bella Italia</p>
-        <nav id="footermenu">
-            <ul>
-                <!-- Social media links -->
-                <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i>Follow us on instagram</a></li>
-                <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i>Check out our facebook</a></li>
-            </ul>
-        </nav>
-    </footer>
-    <!-- Custom JavaScript file -->
-    <script src="{% static 'scripts/script.js' %}"></script>
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <!-- Popper.js -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-8Tg5Zm1d3RdCkTiz7SnTwwH7L0Ww8SAz+dhbd0BfK1bQyyZ5Ccs1PLg6iqkU6tr" crossorigin="anonymous"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha384-L4N6h3v1XyZj6QNIuFe3BvO61Lr1p6c0MQz9npib+AcBvG66lH8W0sN3Z2JPsvvF" crossorigin="anonymous"></script>
-</body>
-</html>
+                </li>
+            {% empty %}
+                <li>No reservations found.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+{% endblock %}
