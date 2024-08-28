@@ -36,24 +36,33 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get the side navigation menu by its ID
     var sidenav = document.getElementById('sidenav');
   
+    // Initial setup
+    sidenav.style.transition = 'height 0.3s ease'; // Smooth transition
+    sidenav.style.overflow = 'hidden'; // Prevent content overflow
+
     // Toggle the side navigation menu and change the icon on click
     hamburger.addEventListener('click', function() {
         // Find the <i> element within the menubtn
         var icon = hamburger.querySelector('i');
-
-        // Check the current height of the side navigation menu
-        if (sidenav.style.height === '0px' || sidenav.style.height === '') {
-            // Open the side navigation menu
-            sidenav.style.height = '25%';
-            // Change the icon to a 'times' (X) symbol
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
-        } else {
+        
+        // Check if the sidenav is currently open
+        if (sidenav.classList.contains('open')) {
             // Close the side navigation menu
             sidenav.style.height = '0';
             // Change the icon back to a 'bars' symbol
             icon.classList.remove('fa-times');
             icon.classList.add('fa-bars');
+            // Remove 'open' class
+            sidenav.classList.remove('open');
+        } else {
+            // Open the side navigation menu
+            sidenav.style.height = `${sidenav.scrollHeight}px`; // Use scrollHeight for smooth expansion
+            // Change the icon to a 'times' (X) symbol
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+            // Add 'open' class
+            sidenav.classList.add('open');
         }
     });
 });
+

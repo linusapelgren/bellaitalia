@@ -45,6 +45,7 @@ header h1 {
 #menu ul {
     display: flex;
     list-style: none;
+    margin: 10px;
 }
 
 #menu ul li {
@@ -405,12 +406,13 @@ footer p {
     display: flex;
     align-items: center; /* Center vertically */
     padding: 20px;
+    z-index: 5;
 }
 
 .logo {
     height: auto;
     width: 50%; /* Maintain aspect ratio */
-    z-index: -2;
+    z-index: 5;
 }
 
 .user-info{
@@ -505,8 +507,29 @@ h2{
     .foodbanner {
         height: 40vh; 
     }
+
+    
+    .logo {
+        height: auto;
+        width: 50%; /* Maintain aspect ratio */
+    }   
+
+    .logocontainer {
+        display: none;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        right: 0;
+        left: auto;
+    }
+
+    .menu{
+        width: 80%;
+    }
 }
 
-.menu{
-    margin-bottom: 10%;
+
+#sidenav{
+    padding: 0;
 }
