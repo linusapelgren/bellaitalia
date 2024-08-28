@@ -9,5 +9,5 @@ urlpatterns = [
     path('cancel-reservation/<int:reservation_id>/', cancel_reservation, name='cancel_reservation'),  
     path('cancellation_confirmation/', cancellation_confirmation, name='cancellation_confirmation'),
     path('reservation/edit/<int:reservation_id>/', edit_reservation, name='edit_reservation'),
-    path('booking/reservation/update/<int:reservation_id>/', update_reservation, name='update_reservation'),
+    path('reservation/update/<int:reservation_id>/', update_reservation, name='update_reservation'),
 ]

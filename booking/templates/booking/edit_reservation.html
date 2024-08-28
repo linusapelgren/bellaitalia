@@ -24,30 +24,28 @@
     </div>
 </div>
 {% endblock %}
-    <script>
-        $(document).ready(function() {
+
+{% block postloadjs %}
+<script>
+    $(document).ready(function() {
         console.log("Document Ready");
 
-        var currentYear = new Date().getFullYear();
-        var endDate = new Date(currentYear, 11, 31); // Set end date to Dec 31 of current year
-
+        // Initialize the date picker
         $('#id_date').datepicker({
             dateFormat: 'yy-mm-dd',
             changeMonth: true,
             changeYear: true,
             showButtonPanel: true,
             minDate: new Date(),
-            maxDate: endDate,
+            maxDate: new Date(new Date().getFullYear(), 11, 31),
             beforeShowDay: function(date) {
                 var day = date.getDay();
                 return [(day != 0), '']; // Disable Sundays
             },
             onSelect: function(dateText) {
                 console.log("Selected Date:", dateText);
-                var url = "{% url 'get_available_times' %}";
-                console.log("AJAX URL:", url);
                 $.ajax({
-                    url: url,
+                    url: "{% url 'get_available_times' %}",
                     type: "GET",
                     dataType: "json",
                     data: { 'date': dateText },
@@ -81,7 +79,8 @@
                 });
             }
         });
+
+        console.log("Datepicker Initialized");
     });
-    </script>
-</body>
-</html>
+</script>
+{% endblock %}

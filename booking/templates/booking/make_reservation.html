@@ -48,60 +48,62 @@
     </div>
 </div>
 {% endblock %}
-    <script>
-        $(document).ready(function() {
-            var currentYear = new Date().getFullYear();
-            var endDate = new Date(currentYear, 11, 31); // Set end date to Dec 31 of current year
 
-            $('#id_date').datepicker({
-                dateFormat: 'yy-mm-dd',
-                changeMonth: true,
-                changeYear: false,
-                showButtonPanel: true,
-                minDate: new Date(),
-                maxDate: endDate,
-                beforeShowDay: function(date) {
-                    var day = date.getDay();
-                    return [(day != 0), ''];
-                },
-                onSelect: function(dateText) {
-                    $.ajax({
-                        url: "{% url 'get_available_times' %}",
-                        type: "GET",
-                        dataType: "json", // Expecting JSON response
-                        data: { 'date': dateText },
-                        success: function(data) {
-                            var timeSelect = $('#id_time');
-                            timeSelect.empty(); // Clear existing options
-                            if (data.times && Array.isArray(data.times) && data.times.length > 0) {
-                                $.each(data.times, function(index, value) {
-                                    timeSelect.append($('<option>', {
-                                        value: value,
-                                        text: value
-                                    }));
-                                });
-                            } else {
+{% block postloadjs %}
+<script>
+    $(document).ready(function() {
+        console.log("Document Ready");
+
+        // Initialize the date picker
+        $('#id_date').datepicker({
+            dateFormat: 'yy-mm-dd',
+            changeMonth: true,
+            changeYear: true,
+            minDate: new Date(),
+            maxDate: new Date(new Date().getFullYear(), 11, 31),
+            beforeShowDay: function(date) {
+                var day = date.getDay();
+                return [(day != 0), '']; // Disable Sundays
+            },
+            onSelect: function(dateText) {
+                console.log("Selected Date:", dateText);
+                $.ajax({
+                    url: "{% url 'get_available_times' %}",
+                    type: "GET",
+                    dataType: "json",
+                    data: { 'date': dateText },
+                    success: function(data) {
+                        console.log("Data Received:", data);
+                        var timeSelect = $('#id_time');
+                        timeSelect.empty();
+                        if (data.times && Array.isArray(data.times) && data.times.length > 0) {
+                            $.each(data.times, function(index, value) {
                                 timeSelect.append($('<option>', {
-                                    value: '',
-                                    text: 'No available times for this date'
+                                    value: value,
+                                    text: value
                                 }));
-                            }
-                        },
-                        error: function(xhr, status, error) {
-                            console.error("Error fetching times:", error);
-                            var timeSelect = $('#id_time');
-                            timeSelect.empty(); // Clear existing options
+                            });
+                        } else {
                             timeSelect.append($('<option>', {
                                 value: '',
-                                text: 'Error fetching times. Please try again later.'
+                                text: 'No available times for this date'
                             }));
                         }
-                    });
-                }
-            });
-
-            // Trigger the change event to initialize the datepicker
-            $('#id_date').trigger('change');
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("Error Fetching Times:", error);
+                        var timeSelect = $('#id_time');
+                        timeSelect.empty();
+                        timeSelect.append($('<option>', {
+                            value: '',
+                            text: 'Error fetching times. Please try again later.'
+                        }));
+                    }
+                });
+            }
         });
-    </script>
-    <script src="{% static 'scripts/script.js' %}"></script>
+
+        console.log("Datepicker Initialized");
+    });
+</script>
+{% endblock %}

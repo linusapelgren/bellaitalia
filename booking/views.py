@@ -71,16 +71,19 @@ def edit_reservation(request, reservation_id):
 
     return render(request, 'booking/edit_reservation.html', {'form': form, 'reservation': reservation})
 
-@login_required
+# views.py
+from django.shortcuts import get_object_or_404, redirect
+from .models import Reservation
+
 def update_reservation(request, reservation_id):
-    reservation = get_object_or_404(Reservation, id=reservation_id, user=request.user)
-    
+    reservation = get_object_or_404(Reservation, id=reservation_id)
     if request.method == 'POST':
-        form = ReservationForm(request.POST, instance=reservation)
-        if form.is_valid():
-            form.save()
-            return redirect('profile')
-    else:
-        form = ReservationForm(instance=reservation)
-    
-    return render(request, 'booking/edit_reservation.html', {'form': form, 'reservation': reservation})
+        # Handle form submission and update reservation
+        # For example:
+        reservation.guests = request.POST['guests']
+        reservation.date = request.POST['date']
+        reservation.time = request.POST['time']
+        reservation.save()
+        return redirect('profile')  # Redirect after successful update
+    # Render form with reservation details
+    return render(request, 'update_reservation.html', {'reservation': reservation})
