@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="d-flex flex-column align-items-center justify-content-center min-vh-100">
+    <!-- About Section -->
+    <h2 class="logo-font" style="text-decoration: underline; padding-bottom: 10px;">About Us</h2>
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <img src="{% static 'images/restaurant.png' %}" alt="Restaurant" class="img-fluid">
+            </div>
+            <div class="col-md-6 d-flex flex-column align-items-center justify-content-center">
+                <h3 class="logo-font">Our Story</h3>
+                <p>Bella Italia is a family-owned Italian restaurant located in the heart of Karlskoga. We have been serving
+                    delicious Italian food since 1995. Our menu is filled with traditional Italian dishes that will make you
+                    feel like you are in Italy. We use only the freshest ingredients to create our dishes, and we have a great
+                    selection of wines to go with your meal. Come and visit us today!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <h2 class="logo-font" style="text-decoration: underline; padding-bottom: 10px;">Contact Us</h2>
+    <div class="container mt-5" id="container">
+        <div class="row">
+            <div class="col-md-6 mb-4 text-center">
+                <h3 class="logo-font">Opening Hours</h3>
+                <p>Monday - Friday: 11:00 - 22:00</p>
+                <p>Saturday - Sunday: 15:00 - 01:00</p>
+            </div>
+            <div class="col-md-6 text-center" id="container">
+                <h3 class="logo-font">Contact Information</h3>
+                <p>Phone: +46 701111111</p>
+                <p>Email: <a href="mailto:bellaitalia@example.com" style="color: black;">bellaitalia@example.com</a></p>
+                <p>Address: Hallänningsgatan 5a, 691 35 Karlskoga</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Google Maps Section -->
+    <h2 class="logo-font" style="text-decoration: underline; padding-bottom: 10px;">Where to find us!</h2>
+    <div class="container text-center mb-5">
+        <div class="map-responsive mx-auto">
+            <iframe style="border: 2px black solid;"
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAiewWiDi3cGwZLQ-ywKfOqvUm3iBzWEqU&q=hallänningsgatan 5a, 691 35 Karlskoga"
+                width="400" height="350" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+    </div>
+</div>
+{% endblock %}

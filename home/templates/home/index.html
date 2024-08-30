@@ -1,36 +1,44 @@
 {% extends "base.html" %}
 {% load static %}
- 
+
 {% block content %}
-    <section class="welcomebanner">
+    <section class="welcomebanner text-center">
         <h2>Welcome to Bella Italia</h2>
         <p>At Bella Italia we serve the best Italian food in town. Our menu is filled with delicious dishes that will make you feel like you are in Italy. We have a wide selection of pasta, pizza, and other Italian dishes. We also have a great selection of wines to go with your meal. Come and visit us today!</p>
     </section>
-    <section class="foodbanner">
-        <img src="{% static 'images/italianfood.jpg' %}" alt="Italian food">
+    <section class="foodbanner text-center">
+        <img src="{% static 'images/italianfood.png' %}" alt="Italian food">
     </section>
     <section class="content">
-        <div class="row">
-            <div class="container">
-                <h2>Make a reservation</h2>
-                <p>We want the eating experience to be as easy as possible for you, therefore we have a booking system on our website!</p>
-                <ul id="buttons">
-                    <li><a href="{% url 'make_reservation' %}">Go to booking page</a></li>
-                    <li><a href="{% url 'menu' %}">Our menu</a></li>
-                </ul>
+        <div class="container-fluid">
+            <!-- Top row aligned to the right -->
+            <div class="row no-gutters align-items-center">
+                <div class="col-md-6 ml-auto text-center">
+                    <div class="text-container">
+                        <h2>Make a reservation</h2>
+                        <p>We want the eating experience to be as easy as possible for you, therefore we have a booking system on our website!</p>
+                        <ul id="buttons" class="list-unstyled">
+                            <li><a href="{% url 'make_reservation' %}" class="btn btn-primary">Go to booking page</a></li>
+                            <li><a href="{% url 'menu' %}" class="btn btn-secondary">Our menu</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="{% static 'images/pizza.png' %}" alt="Pizza" class="img-fluid img-same-width">
+                </div>
             </div>
-            <div class="imgcontainer">
-                <img src="{% static 'images/pizza.png' %}" alt="Pizza" id="pizza">
-            </div>
-        </div>
-        <div class="row2">
-            <div class="imgcontainer2">
-                <img src="{% static 'images/openinghours.png' %}" alt="Opening Hours">
-            </div>
-            <div class="container2">
-                <h2>Contact</h2>
-                <p>+46 701111111</p>
-                <p>We are located in the heart of the city. Our address is: 123 Main Street, Örebro, Sweden.</p>
+            <!-- Bottom row aligned to the left -->
+            <div class="row no-gutters mt-4 align-items-center row2">
+                <div class="col-md-6 text-center">
+                    <img src="{% static 'images/openinghours.png' %}" alt="Opening Hours" class="img-fluid img-same-width">
+                </div>
+                <div class="col-md-6 mr-auto text-center">
+                    <div class="text-container">
+                        <h2>Contact</h2>
+                        <p><strong>Phone:</strong> +46 701111111</p>
+                        <p><strong>Address:</strong> Hallänningsgatan 5A, Karlskoga Sweden</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
