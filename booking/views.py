@@ -13,9 +13,9 @@ def make_reservation(request):
         form = ReservationForm(request.POST, fetch_available_times=fetch_available_times)
         if form.is_valid():
             reservation = form.save(commit=False)
-            reservation.user = request.user
-            reservation.save()
-            send_sms(reservation.phone_number, reservation)
+            reservation.user = request.user  # Assign the current logged-in user
+            reservation.save()  # Save the reservation to the database
+            send_sms(reservation.phone_number, reservation)  # Send SMS confirmation
             print(f"Reservation created: {reservation.id}")
             return redirect('reservation_confirmation', reservation_id=reservation.id)
         else:
