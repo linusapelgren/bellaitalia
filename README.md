@@ -7,6 +7,24 @@
 
 [Admin page](https://bellaitalia-a028d02ecd3c.herokuapp.com/admin/login/?next=/admin/)
 
+## Content
+- [User Stories](#user-stories)
+- [Design](#design)
+    - [Wireframes](#wireframes)
+    - [Site Styling](#styling)
+- [Marketing](#marketing)
+- [Site Content](#site-content)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+    - [Packages](#packages)
+    - [Tools and Programs Used](#tools-and-programs-used)
+- [Testing](#testing)
+    - [Code Validation](#code-validation)
+    - [Lighthouse Tool](#lighthouse-tool)
+    - [Manual Testing](#manual-testing)
+- [Deployment](#deployment)
+- [Credits](#credits)
+
 ## Introduction 
 
 Bella Italia is a sophisticated restaurant designed to simplify the restaurant booking experience both for the user and owner.
@@ -80,13 +98,100 @@ At this date no Unfixed bugs
 
 ## Testing
 
-### Manual testing
+## Validator testing
+
+
+- HTML
+  - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbellaitaliarestaurant-bfa3d8f4d24e.herokuapp.com)
+  - One warning was returned but I didn't fix it since that would ruin the look of the page
+
+  <img src="static/images/htmlvalidator.png" alt="HTML validator" width="500">
+
+- CSS
+  - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator)
+
+  <img src="static/images/cssvalidator.png" alt="CSS validator" width="500">
+
+## Lighthouse Tool
+
+## Desktop 
+
+## Landing Page
+
+<img src="static/images/landing.png" alt="Main menu" width="500">
+
+## Menu Page
+
+<img src="static/images/menu.png" alt="Main menu" width="500">
+
+## Reservation Page
+
+<img src="static/images/reservation.png" alt="Main menu" width="500">
+
+## Profile Page
+
+<img src="static/images/profilepage.png" alt="Main menu" width="500">
+
+## About Page
+
+<img src="static/images/aboutpage.png" alt="Main menu" width="500">
+
+## Mobile Phone
+
+## Landing Page
+
+<img src="static/images/landingmobile.png" alt="Main menu" width="500">
+
+## Menu Page
+
+<img src="static/images/menumobile.png" alt="Main menu" width="500">
+
+## Reservation Page
+
+<img src="static/images/reservationmobile.png" alt="Main menu" width="500">
+
+## Profile Page
+
+<img src="static/images/profilepagemobile.png" alt="Main menu" width="500">
+
+## About Page
+
+<img src="static/images/aboutpagemobile.png" alt="Main menu" width="500">
+
+## Manual testing
 I conducted a lot of tests during programming. I used a live preview to check if everything i programmed functioned as intended
+
+### Navigation
+| Feature Tested  | Outcome  | Test Performed  | Result  | Pass/Fail  |
+|---|---|---|---|---|
+|  Home | Display the Home page| Click site logo | Taken to the Home page | Pass  |
+|  Booking | Display the Booking page| Click Booking | Taken to the Booking page | Pass  |
+|  About | Display the About page| Click About | Taken to the About page | Pass  |
+|  Profile | Display the Profile page| Click the profile dropdown and then Profile | Taken to the Profile page | Pass  |
+
+### Profile
+| Feature Tested  | Outcome  | Test Performed  | Result  | Pass/Fail  |
+|---|---|---|---|---|
+|  Logout | Logs out the user | Click the logout button in the account dropdown | Gets logged out | Pass |
+|  Login | Logs in the user | Click the login button in the account dropdown | Taken to login page then gets logged in after filling it out | Pass |
+|  Register | Registers the user | Click the register button in the account dropdown | Taken to register page then gets logged in after filling it out | Pass |
+
+### Reservations
+| Feature Tested  | Outcome  | Test Performed  | Result  | Pass/Fail  |
+|---|---|---|---|---|
+|  Opening hours | The right times should be shown based on what day you picked | Select a date and then look in the time picker | Correct opening hours shown | Pass |
+|  Booking | The reservation gets made and saved in profile and admin | Fill out the form and click book | Reservation gets made and saved | Pass |
+|  Cancel reservation | The reservation gets removed | On the profile page click cancel beside your reservation | Reservation cancelled | Pass |
+|  Change reservation | The reservation gets updated | On the profile page click edit beside your reservation then fill out the form and click update | Reservation updated | Pass |
+|  Twilio | Message gets sent to user when making a reservation | Fill out the form and click book | Message sent | Pass |
+
+### Side note
+- The messaging may not work outside of Sweden
 
 ### Testing on different screen sizes
 I used my browser tools to check how the page looked on different devices
 
-# Wireframes 
+## Wireframes 
 
 ## Desktop 
 
@@ -132,7 +237,7 @@ I used my browser tools to check how the page looked on different devices
 
 <img src="static/images/wireframes/aboutpagemobile.png" alt="Main menu" width="500">
 
-# Pages 
+## Site content 
 
 ## Desktop 
 
@@ -178,9 +283,9 @@ I used my browser tools to check how the page looked on different devices
 
 <img src="static/images/aboutmobile.png" alt="Main menu" width="500">
 
-# Features:
+## Features:
 
-## Existing Features 
+### Existing Features 
 
 **Navigation**:
 
@@ -227,7 +332,7 @@ I used my browser tools to check how the page looked on different devices
   
 ![Menu](static/images/foodmenu.png)
 
-# Technologies Used 
+## Technologies Used 
 
 - **HTML**: Used for the main site content.
 - **CSS**: Used for the main site design and layout.
@@ -246,23 +351,23 @@ I used my browser tools to check how the page looked on different devices
 - **Twilio** For sending booking conformations
  
 
-# Deployment
+## Deployment
 
 This website is deployed to Heroku from a GitHub repository. The following steps were taken:
 
-## Creating Repository on GitHub
+### Creating Repository on GitHub
 
 1. First, make sure you are signed into GitHub and go to the [Code Institute's template](https://github.com/Code-Institute-Org/gitpod-full-template).
 2. Then click on "use this template" and select "Create a new repository" from the drop-down. Enter the name for the repository and click "Create repository from template".
 3. Once the repository was created, I clicked the green Gitpod button to create a workspace in Gitpod so that I could write the code for the site.
 
-## Creating an app on Heroku
+### Creating an app on Heroku
 
 1. After creating the repository on GitHub, head over to [Heroku](https://www.heroku.com/) and sign in.
 2. On the home page, click "New" and select "Create new app" from the drop-down.
 3. Give the app a name (this must be unique) and select a region. I chose Europe as I am in Europe. Then click "Create app".
 
-## Add heroku postgres to heroku app 
+### Add heroku postgres to heroku app 
 
 1. On your Heroku dashboard click configure add-ons 
 2. Click find more add-ons
@@ -273,7 +378,7 @@ This website is deployed to Heroku from a GitHub repository. The following steps
 7. Click reveal config vars and copy the HEROKU_POSTGRESQL_AMBER_URL and add the value to DATABASE_URL
 4. Head over to Gitpod and create a Database URL environment variable in your `.env` file and set it equal to the copied URL.
 
-## Deploying to Heroku
+### Deploying to Heroku
 
 1. Head back over to Heroku and click on your app and then go to the "Settings" tab.
 2. On the settings page, scroll down to the "config vars" section and enter the following:
@@ -319,13 +424,10 @@ After performing the standard Git add, commit, and push to GitHub, you can now t
 
 - git push heroku main
 
-## Credits
+### Credits
 
 Credits to:
-- Microsoft paint for making the wireframes
-- Google for some of the images used
-- Twilio for sms function
-- Canva for some of the assets used on the page
+
 
 
 
