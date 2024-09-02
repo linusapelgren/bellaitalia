@@ -478,3 +478,4 @@ After performing the standard Git add, commit, and push to GitHub, you can now t
 - git push heroku main
 
 ### Credits
+- Pexels for the stock images
