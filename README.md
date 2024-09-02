@@ -342,48 +342,50 @@ I used my browser tools to check how the page looked on different devices
 
 ## Navigation
 
-![Main menu](static/images/mainmenu.png)
+<img src="static/images/mainmenu.png" width="500px" alt="Main menu">
 
-![Small screen menu](static/images/menusmall.png)
+<img src="static/images/menusmall.png" width="500px" alt="Small screen menu">
 
 ## Booking System
 
 ## Make reservation
 
-![Reservation confirmation](static/images/reservationconfirmation.png)
+<img src="static/images/reservationconfirmation.png" width="500px" alt="Reservation confirmation">
 
 ## Reservation form
 
-![Reservation form](static/images/reservationform.png)
+<img src="static/images/reservationform.png" width="500px" alt="Reservation form">
 
-![Date Picker](static/images/datepicker.png)
+<img src="static/images/datepicker.png" width="500px" alt="Date Picker">
 
 ## Cancel reservation
 
-![Cancel reservation](static/images/cancellation.png)
+<img src="static/images/cancellation.png" width="500px" alt="Cancel reservation">
 
-![Cancellation confirmation](static/images/cancellationconfirmation.png)
+<img src="static/images/cancellationconfirmation.png" width="500px" alt="Cancellation confirmation">
 
-![No reservations](static/images/updatedreservation.png)
+<img src="static/images/updatedreservation.png" width="500px" alt="No reservations">
 
 ## Change reservation
 
-![Change reservation](static/images/edit.png)
+<img src="static/images/edit.png" width="500px" alt="Change reservation">
 
-![Reservations](static/images/reservations.png)
+<img src="static/images/reservations.png" width="500px" alt="Reservations">
 
-![Updated reservation](static/images/updatedreservation.png)
+<img src="static/images/updatedreservation.png" width="500px" alt="Updated reservation">
 
+## Opening hours
 
-## Day Specific opening hours
+<img src="static/images/openinghours.png" width="500px" alt="Opening hours">
 
-![Cancel reservation](static/images/cancellation.png)
+<img src="static/images/customhours.png" width="500px" alt="Customize Opening Hours">
 
-![Cancellation confirmation](static/images/cancellationconfirmation.png)
+<img src="static/images/notimes.png" width="500px" alt="No Available times">
 
 ## Menu:
   
-![Menu](static/images/foodmenu.png)
+<img src="static/images/foodmenu.png" width="500px" alt="Menu">
+
 
 ## Technologies Used 
 
