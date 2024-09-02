@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY =  os.environ.get("SECRET_KEY")
+SECRET_KEY =  "django-insecure-ukop62cul(108(rj_o3r3cr2rz5k$opf@4!ic4jyf_bu8#u0_r"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -169,7 +169,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Twilio settings
-TWILIO_ACCOUNT_SID = os.environ.get("TWILIO_ACCOUNT_SID")
-TWILIO_AUTH_TOKEN = os.environ.get("TWILIO_AUTH_TOKEN")
+TWILIO_ACCOUNT_SID = "AC6bba9430be4f5378c72a84b57ba089ef"
+TWILIO_AUTH_TOKEN = "f8b0e9bb085dd9dcc35f39c865739dc6"
 TWILIO_PHONE_NUMBER = '+46734701154'
 

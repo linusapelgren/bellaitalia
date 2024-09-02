@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 from twilio.rest import Client
 from django.conf import settings
+from .models import OpeningHours
 
 def generate_time_slots(start_time, end_time):
     time_slots = []
@@ -14,24 +15,18 @@ def generate_time_slots(start_time, end_time):
 
 def fetch_available_times(selected_date):
     weekday = selected_date.weekday()
-    time_slots = []
+    try:
+        opening_hours = OpeningHours.objects.get(day_of_week=weekday)
+    except OpeningHours.DoesNotExist:
+        return []  # No opening hours for this day
 
-    if weekday < 4:
-        start_time = datetime.combine(selected_date, datetime.strptime("10:00", '%H:%M').time())
-        end_time = datetime.combine(selected_date, datetime.strptime("22:00", '%H:%M').time())
-        time_slots = generate_time_slots(start_time, end_time)
-    elif weekday == 4:
-        start_time = datetime.combine(selected_date, datetime.strptime("15:00", '%H:%M').time())
-        end_time = datetime.combine(selected_date + timedelta(days=1), datetime.strptime("01:00", '%H:%M').time())
-        time_slots = generate_time_slots(start_time, end_time)
-    elif weekday == 5:
-        start_time = datetime.combine(selected_date, datetime.strptime("15:00", '%H:%M').time())
-        end_time = datetime.combine(selected_date + timedelta(days=1), datetime.strptime("01:00", '%H:%M').time())
-        time_slots = generate_time_slots(start_time, end_time)
-    elif weekday == 6:
-        time_slots = []
+    start_time = datetime.combine(selected_date, opening_hours.start_time)
+    end_time = datetime.combine(selected_date, opening_hours.end_time)
+    
+    if start_time > end_time:
+        end_time += timedelta(days=1)  # Handle cases where end_time is on the next day
 
-    return time_slots
+    return generate_time_slots(start_time, end_time)
 
 account_sid = settings.TWILIO_ACCOUNT_SID
 auth_token = settings.TWILIO_AUTH_TOKEN

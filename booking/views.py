@@ -6,6 +6,7 @@ from .utils import fetch_available_times, send_sms
 from .forms import ReservationForm
 from django.contrib.auth.decorators import login_required
 from accounts.views import profile
+from .models import OpeningHours
 
 @login_required
 def make_reservation(request):
@@ -42,8 +43,20 @@ def get_available_times(request):
     except ValueError:
         return JsonResponse({'times': []})
 
-    available_times = fetch_available_times(selected_date)
-    return JsonResponse({'times': available_times})
+    # Get the day of the week for the selected date
+    day_of_week = selected_date.weekday()  # Monday=0, Sunday=6
+
+    # Check if the selected day is closed
+    try:
+        opening_hours = OpeningHours.objects.get(day_of_week=day_of_week)
+        if opening_hours.closed:
+            return JsonResponse({'times': []})
+    except OpeningHours.DoesNotExist:
+        return JsonResponse({'times': []})
+
+    # Fetch available times if the day is not closed
+    time_slots = fetch_available_times(selected_date)
+    return JsonResponse({'times': time_slots})
 
 def cancellation(request, reservation_id):
     reservation = get_object_or_404(Reservation, pk=reservation_id)
@@ -70,10 +83,6 @@ def edit_reservation(request, reservation_id):
         form = ReservationForm(instance=reservation)
 
     return render(request, 'booking/edit_reservation.html', {'form': form, 'reservation': reservation})
-
-# views.py
-from django.shortcuts import get_object_or_404, redirect
-from .models import Reservation
 
 def update_reservation(request, reservation_id):
     reservation = get_object_or_404(Reservation, id=reservation_id)

@@ -3,23 +3,35 @@
 <img src="static/images/amiresponsive.png" alt="Amiresponsive" width="1000">
 
 
-[See live site ](https://bellaitaliarestaurant-bfa3d8f4d24e.herokuapp.com)
+[See live site](https://bellaitaliarestaurant-bfa3d8f4d24e.herokuapp.com)
 
-[Admin page](https://bellaitalia-a028d02ecd3c.herokuapp.com/admin/login/?next=/admin/)
+[Admin page](https://bellaitaliarestaurant-bfa3d8f4d24e.herokuapp.com/admin/login/?next=/admin/)
+
+## Admin credentials:
+- Username: admin
+- Password: admin
 
 ## Content
+- [Introduction](#introduction)
 - [User Stories](#user-stories)
+    - [Completed User Stories](#completed-user-stories)
+    - [Incomplete User Stories](#incomplete-user-stories)
+    - [Classification of User Stories](#classification-of-user-stories)
 - [Design](#design)
     - [Wireframes](#wireframes)
-    - [Site Styling](#styling)
-- [Marketing](#marketing)
+    - [Site Styling](#site-styling)
 - [Site Content](#site-content)
 - [Features](#features)
+    - [Navigation](#navigation)
+    - [Booking System](#booking-system)
+    - [Day Specific Opening Hours](#day-specific-opening-hours)
+    - [Menu](#menu)
 - [Technologies Used](#technologies-used)
+    - [HTML, CSS, JavaScript, Python, Django](#html-css-javascript-python-django)
     - [Packages](#packages)
     - [Tools and Programs Used](#tools-and-programs-used)
 - [Testing](#testing)
-    - [Code Validation](#code-validation)
+    - [Validator Testing](#validator-testing)
     - [Lighthouse Tool](#lighthouse-tool)
     - [Manual Testing](#manual-testing)
 - [Deployment](#deployment)
@@ -47,47 +59,63 @@ Bella Italia is a sophisticated restaurant designed to simplify the restaurant b
 
 ## User Stories
 
-### Completed User Stories
+[All User Stories](https://github.com/linusapelgren/bellaitalia/issues)
 
-- Install all buildpacks 
-- Implement sms confirmation
-- Make templates
-- Deploy to heroku 
-- Implement admin page
-- Cancel booked time
-- Implement a working booking system
-- Make a database 
+### Completed User Stories
+1. **As a User,** I want to be able to easily find and navigate through the website, so that I can quickly access information and make reservations.
+2. **As a Restaurant Owner,** I want an admin page where I can manage reservations, so that I can easily track and update bookings.
+3. **As a User,** I want to receive a confirmation message after making a reservation, so that I know my booking was successful.
+4. **As a User,** I want to be able to cancel my reservation easily, so that I can manage my bookings without hassle.
+5. **As a Developer,** I want to deploy the website to Heroku, so that it is available online for users.
+6. **As a User,** I want to change my reservation details, so that I can update my booking if my plans change.
+7. **As a Developer,** I want to implement Allauth, for account management.
+8. **As a Restaurant Owner,** I want to have set opening hours, so that users can't book when the restaurant is closed.
+9. **As a Restaurant Owner,** I want to be able to customize opening hours.
 
 ### Incomplete User Stories
-- Change reservation
-- Implement messaging system for reservation updates 
-- Prevent double booking when restaurant is full
+1. **As a Restaurant Owner,** I want to be able to set specific opening hours for specific dates, like holidays.
+2. **As a User,** I want to receive updates via messages about my reservation, so that I am informed about any changes or reminders.
+3. **As a Restaurant Owner,** I want the system to prevent double bookings when the restaurant is full, so that overbooking is avoided.
 
-### All user stories
-[All Users Stories ](https://github.com/linusapelgren/Bella_Italia/issues)
+### Classification of User Stories
 
-## Classification of User Stories
+#### Must Have
+- Implement a working booking system.
+- Deploy the website to Heroku.
+- Create a database for storing user reservations.
+- Implement an admin page for reservation management.
+- Allow users to cancel bookings.
+- Allow users to update their reservation details.
+- Implement customization of opening hours
 
-User stories in this project were classified into two types: "Could have" and "Must have".
+#### Could Have
+- Implement SMS confirmation for reservations.
+- Set specific opening hours on specific days.
+- Prevent double booking when the restaurant is full.
 
-### Could Have
-These are non-essential features that are nice to include if time and resources allow. They enhance the project but are not critical to its core functionality.
+## Epics and Milestones
 
-- Implement sms confirmation
-- Implement messaging system for reservation updates
-- Prevent double booking when restaurant is full
+### Epics
 
-### Must Have
-These are crucial components necessary for the project's success. They form the foundation and primary functionality that the project cannot do without.
+#### Epic 1: Website Navigation and User Experience
+- **Milestone 1: Initial Website Setup and Deployment**
+  - User Story 1: As a User, I want to be able to easily find and navigate through the website.
+  - User Story 2: As a User, I want to change my reservation details.
+  - User Story 3: As a Restaurant Owner, I want to have set opening hours.
 
-- Install all packs 
-- Implement a working booking system
-- Cancel booked time
-- Set a database 
-- Make templates
-- Implement admin page
-- Deploy to heroku
-- Change reservation
+#### Epic 2: Reservation System Management
+- **Milestone 2: Core Reservation Features**
+  - User Story 1: As a Restaurant Owner, I want an admin page where I can manage reservations.
+  - User Story 2: As a User, I want to receive a confirmation message after making a reservation.
+  - User Story 3: As a User, I want to be able to cancel my reservation easily.
+  - User Story 4: As a Developer, I want to implement Allauth for account management.
+  - User Story 5:  As a Restaurant Owner, I want an admin page where I can manage opening hours.
+
+#### Epic 3: System Enhancements and Integrations
+- **Milestone 3: Advanced Features and Final Improvements**
+  - Incomplete User Story 1: As a Restaurant Owner, I want to be able to set specific opening hours for specific dates.
+  - Incomplete User Story 2: As a User, I want to receive updates via messages about my reservation.
+  - Incomplete User Story 3: As a Restaurant Owner, I want the system to prevent double bookings when the restaurant is full.
 
 ## Bugs & Future Features
 
@@ -95,6 +123,7 @@ At this date no Unfixed bugs
 
 ### Future Features
 - Prevent double booking when restaurant is full
+- Set specific opening hours on specific days
 
 ## Testing
 
@@ -118,45 +147,69 @@ At this date no Unfixed bugs
 
 ## Landing Page
 
-<img src="static/images/landing.png" alt="Main menu" width="500">
+<img src="static/images/lighthouse/landing.png" alt="Landing page overview" width="500">
 
 ## Menu Page
 
-<img src="static/images/menu.png" alt="Main menu" width="500">
+<img src="static/images/lighthouse/menu.png" alt="Menu page with dish options" width="500">
 
 ## Reservation Page
 
-<img src="static/images/reservation.png" alt="Main menu" width="500">
+<img src="static/images/lighthouse/booking.png" alt="Reservation booking form" width="500">
+
+## Reservation Confirmation Page
+
+<img src="static/images/lighthouse/confirmation.png" alt="Reservation confirmation details" width="500">
+
+## Cancel Reservation Page
+
+<img src="static/images/lighthouse/cancel.png" alt="Reservation cancellation page" width="500">
+
+## Edit Reservation Page
+
+<img src="static/images/lighthouse/edit.png" alt="Edit reservation form" width="500">
 
 ## Profile Page
 
-<img src="static/images/profilepage.png" alt="Main menu" width="500">
+<img src="static/images/lighthouse/profile.png" alt="User profile page" width="500">
 
 ## About Page
 
-<img src="static/images/aboutpage.png" alt="Main menu" width="500">
+<img src="static/images/lighthouse/about.png" alt="About us page" width="500">
 
 ## Mobile Phone
 
 ## Landing Page
 
-<img src="static/images/landingmobile.png" alt="Main menu" width="500">
+<img src="static/images/lighthouse/landingmobile.png" alt="Landing page overview on mobile" width="500">
 
 ## Menu Page
 
-<img src="static/images/menumobile.png" alt="Main menu" width="500">
+<img src="static/images/lighthouse/menumobile.png" alt="Menu page with dish options on mobile" width="500">
 
 ## Reservation Page
 
-<img src="static/images/reservationmobile.png" alt="Main menu" width="500">
+<img src="static/images/lighthouse/bookingmobile.png" alt="Reservation booking form on mobile" width="500">
+
+## Reservation Confirmation Page
+
+<img src="static/images/lighthouse/confirmationmobile.png" alt="Reservation confirmation details on mobile" width="500">
+
+## Cancel Reservation Page
+
+<img src="static/images/lighthouse/cancelmobile.png" alt="Reservation cancellation page on mobile" width="500">
+
+## Edit Reservation Page
+
+<img src="static/images/lighthouse/editmobile.png" alt="Edit reservation form on mobile" width="500">
 
 ## Profile Page
 
-<img src="static/images/profilepagemobile.png" alt="Main menu" width="500">
+<img src="static/images/lighthouse/profilemobile.png" alt="User profile page on mobile" width="500">
 
 ## About Page
 
-<img src="static/images/aboutpagemobile.png" alt="Main menu" width="500">
+<img src="static/images/lighthouse/aboutmobile.png" alt="About us page on mobile" width="500">
 
 ## Manual testing
 I conducted a lot of tests during programming. I used a live preview to check if everything i programmed functioned as intended
@@ -285,27 +338,27 @@ I used my browser tools to check how the page looked on different devices
 
 ## Features:
 
-### Existing Features 
+## Existing Features 
 
-**Navigation**:
+## Navigation
 
 ![Main menu](static/images/mainmenu.png)
 
 ![Small screen menu](static/images/menusmall.png)
 
-**Booking System**:
+## Booking System
 
-***Make reservation***
-
-![Reservation form](static/images/reservationform.png)
+## Make reservation
 
 ![Reservation confirmation](static/images/reservationconfirmation.png)
 
-***Reservation form***
+## Reservation form
+
+![Reservation form](static/images/reservationform.png)
 
 ![Date Picker](static/images/datepicker.png)
 
-***Cancel reservation***
+## Cancel reservation
 
 ![Cancel reservation](static/images/cancellation.png)
 
@@ -313,7 +366,7 @@ I used my browser tools to check how the page looked on different devices
 
 ![No reservations](static/images/updatedreservation.png)
 
-***Change reservation***
+## Change reservation
 
 ![Change reservation](static/images/edit.png)
 
@@ -322,13 +375,13 @@ I used my browser tools to check how the page looked on different devices
 ![Updated reservation](static/images/updatedreservation.png)
 
 
-***Day Specific opening hours***
+## Day Specific opening hours
 
 ![Cancel reservation](static/images/cancellation.png)
 
 ![Cancellation confirmation](static/images/cancellationconfirmation.png)
 
-**Menu**:
+## Menu:
   
 ![Menu](static/images/foodmenu.png)
 
@@ -425,10 +478,3 @@ After performing the standard Git add, commit, and push to GitHub, you can now t
 - git push heroku main
 
 ### Credits
-
-Credits to:
-
-
-
-
-
