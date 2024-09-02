@@ -2,20 +2,20 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <section class="content">
-        <h2>Cancel reservation</h2>
-        <div class="confirmation-details">
-            <!-- Display reservation details dynamically -->
-            <ul>
-                <li><strong>Name:</strong> {{ reservation.name }}</li>
-                <li><strong>Phone Number:</strong> {{ reservation.phone_number }}</li>
-                <li><strong>Date:</strong> {{ reservation.date }}</li>
-                <li><strong>Time:</strong> {{ reservation.time }}</li>
-            </ul>
-            <!-- Link to cancel the reservation, passing the reservation ID -->
-            <a href="{% url 'cancel_reservation' reservation.id %}" class="confirmation-details-button">Cancel</a>
-        </div>
-    </section>
+<div class="container min-vh-100 d-flex align-items-center" style="flex-direction: column;">
+    <h2>Cancel reservation</h2>
+    <div class="confirmation-details">
+        <!-- Display reservation details dynamically -->
+        <ul>
+            <li><strong>Name:</strong> {{ reservation.name }}</li>
+            <li><strong>Phone Number:</strong> {{ reservation.phone_number }}</li>
+            <li><strong>Date:</strong> {{ reservation.date }}</li>
+            <li><strong>Time:</strong> {{ reservation.time }}</li>
+        </ul>
+        <!-- Link to cancel the reservation, passing the reservation ID -->
+        <a href="{% url 'cancel_reservation' reservation.id %}" class="confirmation-details-button">Cancel</a>
+    </div>
+</div>
 {% endblock %}
     <script src="{% static 'scripts/script.js' %}"></script>
 

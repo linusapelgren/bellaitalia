@@ -379,6 +379,10 @@ h2{
     padding: 20px;
 }
 
+.user-info, .booked-times{
+    width: 50%;
+}
+
 /* Adjust the gap within the header for smaller screens */
 @media only screen and (max-width: 1000px) {
     #menu {
@@ -469,8 +473,22 @@ h2{
         flex-direction: column-reverse;
     }
 
-}
+    .edit_form{
+        width: 100%;
+        padding: 20px;
+    }
 
+    .user-info{
+        width: 100%;
+        padding: 20px;
+    }
+
+    .booked-times{
+        width: 100%;
+        padding: 20px;
+    }
+
+}
 
 #sidenav{
     padding: 0;
@@ -489,7 +507,7 @@ section {
 .img-same-width {
     width: 1000px; /* Set a fixed width for both images */
     height: auto; /* Maintain aspect ratio */
-}
+} 
 
 .img-fluid {
     max-width: 100%;

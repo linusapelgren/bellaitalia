@@ -5,14 +5,14 @@
 <h2>User Profile</h2>
 <div class="container min-vh-100 d-flex align-items-center" style="flex-direction: column;">
     <!-- User Information Section -->
-    <div class="user-info text-center mb-4 d-flex align-items-center" style="width: 40%;">
+    <div class="user-info text-center mb-4 d-flex align-items-center">
         <h2>Account Information</h2>
         <p>Email: {{ user.email }}</p>
-        <p>Phone: {{ user_profile.phone_number }}</p>
+        <p>Name: {{ user.first_name }} {{ user.last_name }}</p>
     </div>
     
     <!-- Booked Times Section -->
-    <div class="booked-times text-center d-flex align-items-center" style="width: 40%;">
+    <div class="booked-times text-center d-flex align-items-center">
         <h2>Your Reservations</h2>
         <ul class="list-unstyled">
             {% for reservation in user.reservations.all %}

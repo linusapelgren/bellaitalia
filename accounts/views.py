@@ -17,10 +17,3 @@ class CustomSignupView(AllauthSignupView):
 @login_required
 def profile(request):
     return render(request, 'accounts/profile.html')
-
-class CustomPasswordChangeView(PasswordChangeView):
-    success_url = reverse_lazy("profile_view")  # Update this to your profile view URL
-
-    def form_valid(self, form):
-        messages.success(self.request, "Password changed successfully.")
-        return super().form_valid(form)

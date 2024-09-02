@@ -1,6 +1,10 @@
 # Bella Italia 
 
+<img src="static/images/amiresponsive.png" alt="Amiresponsive" width="1000">
+
+
 [See live site ](https://bellaitaliarestaurant-bfa3d8f4d24e.herokuapp.com)
+
 [Admin page](https://bellaitalia-a028d02ecd3c.herokuapp.com/admin/login/?next=/admin/)
 
 ## Introduction 
@@ -51,7 +55,6 @@ User stories in this project were classified into two types: "Could have" and "M
 ### Could Have
 These are non-essential features that are nice to include if time and resources allow. They enhance the project but are not critical to its core functionality.
 
-- Change reservation
 - Implement sms confirmation
 - Implement messaging system for reservation updates
 - Prevent double booking when restaurant is full
@@ -66,14 +69,13 @@ These are crucial components necessary for the project's success. They form the 
 - Make templates
 - Implement admin page
 - Deploy to heroku
+- Change reservation
 
-## Bugs
+## Bugs & Future Features
 
 At this date no Unfixed bugs
 
 ### Future Features
-- Change reservation
-- Implement messaging system for reservation updates 
 - Prevent double booking when restaurant is full
 
 ## Testing
@@ -88,23 +90,97 @@ I used my browser tools to check how the page looked on different devices
 
 ## Desktop 
 
+## Landing Page
+
 <img src="static/images/wireframes/landing.png" alt="Main menu" width="500">
+
+## Menu Page
 
 <img src="static/images/wireframes/menu.png" alt="Main menu" width="500">
 
+## Reservation Page
+
 <img src="static/images/wireframes/reservation.png" alt="Main menu" width="500">
 
-## Mobile Phone 
+## Profile Page
+
+<img src="static/images/wireframes/profilepage.png" alt="Main menu" width="500">
+
+## About Page
+
+<img src="static/images/wireframes/aboutpage.png" alt="Main menu" width="500">
+
+## Mobile Phone
+
+## Landing Page
 
 <img src="static/images/wireframes/landingmobile.png" alt="Main menu" width="500">
 
+## Menu Page
+
 <img src="static/images/wireframes/menumobile.png" alt="Main menu" width="500">
+
+## Reservation Page
 
 <img src="static/images/wireframes/reservationmobile.png" alt="Main menu" width="500">
 
+## Profile Page
+
+<img src="static/images/wireframes/profilepagemobile.png" alt="Main menu" width="500">
+
+## About Page
+
+<img src="static/images/wireframes/aboutpagemobile.png" alt="Main menu" width="500">
+
+# Pages 
+
+## Desktop 
+
+## Landing Page
+
+<img src="static/images/landing.png" alt="Main menu" width="500">
+
+## Menu Page
+
+<img src="static/images/menupage.png" alt="Main menu" width="500">
+
+## Reservation Page
+
+<img src="static/images/booking.png" alt="Main menu" width="500">
+
+## Profile Page
+
+<img src="static/images/profile.png" alt="Main menu" width="500">
+
+## About Page
+
+<img src="static/images/about.png" alt="Main menu" width="500">
+
+## Mobile Phone
+
+## Landing Page
+
+<img src="static/images/landingmobile.png" alt="Landing page" width="500">
+
+## Menu Page
+
+<img src="static/images/menupagemobile.png" alt="Main menu" width="500">
+
+## Reservation Page
+
+<img src="static/images/bookingmobile.png" alt="Main menu" width="500">
+
+## Profile Page
+
+<img src="static/images/profilemobile.png" alt="Main menu" width="500">
+
+## About Page
+
+<img src="static/images/aboutmobile.png" alt="Main menu" width="500">
+
 # Features:
 
-Existing Features 
+## Existing Features 
 
 **Navigation**:
 
@@ -130,14 +206,26 @@ Existing Features
 
 ![Cancellation confirmation](static/images/cancellationconfirmation.png)
 
+![No reservations](static/images/updatedreservation.png)
+
+***Change reservation***
+
+![Change reservation](static/images/edit.png)
+
+![Reservations](static/images/reservations.png)
+
+![Updated reservation](static/images/updatedreservation.png)
+
+
+***Day Specific opening hours***
+
+![Cancel reservation](static/images/cancellation.png)
+
+![Cancellation confirmation](static/images/cancellationconfirmation.png)
+
 **Menu**:
   
 ![Menu](static/images/foodmenu.png)
-
-**Admin page**:
-
-![Manage reservation](static/images/adminpage.png)
-
 
 # Technologies Used 
 
@@ -154,6 +242,7 @@ Existing Features
 - **Heroku**: Used for hosting the deployed back-end site.
 - **Paint**: Used to design my site wireframes.
 - **Canva** Used to make assets for my website
+- **Pexels** Used for stock images for the site
  
 
 # Deployment
