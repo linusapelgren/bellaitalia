@@ -14,5 +14,6 @@ class CustomSignupForm(SignupForm):
         user = super().save(request)
         user.first_name = self.cleaned_data["first_name"]
         user.last_name = self.cleaned_data["last_name"]
+        user.phone_number = self.cleaned_data["phone_number"]
         user.save()
         return user

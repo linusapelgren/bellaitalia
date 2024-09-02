@@ -89,13 +89,6 @@ AUTHENTICATION_BACKENDS = [
     "allauth.account.auth_backends.AuthenticationBackend",
 ]
 
-# Email backend configuration
-EMAIL_BACKEND = "django_mailjet.backends.MailjetBackend"
-MAILJET_API_KEY = os.environ.get("MAILJET_API_KEY")
-MAILJET_API_SECRET = os.environ.get("MAILJET_API_SECRET")
-DEFAULT_FROM_EMAIL = "Bella Italia Restaurant <linusapelgren6789@gmail.com>"
-ACCOUNT_EMAIL_SUBJECT_PREFIX = "[Bella Italia Restaurant]"
-
 # Allauth settings
 ACCOUNT_AUTHENTICATION_METHOD = "email"
 ACCOUNT_EMAIL_REQUIRED = True
