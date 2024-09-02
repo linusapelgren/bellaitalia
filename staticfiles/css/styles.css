@@ -379,6 +379,10 @@ h2{
     padding: 20px;
 }
 
+.user-info, .booked-times{
+    width: 50%;
+}
+
 /* Adjust the gap within the header for smaller screens */
 @media only screen and (max-width: 1000px) {
     #menu {
@@ -469,8 +473,26 @@ h2{
         flex-direction: column-reverse;
     }
 
-}
+    .edit_form{
+        width: 100%;
+        padding: 20px;
+    }
 
+    .user-info{
+        width: 100%;
+        padding: 20px;
+    }
+
+    .booked-times{
+        width: 100%;
+        padding: 20px;
+    }
+
+    .logo-font {
+        font-size: 1.5rem;
+    }
+
+}
 
 #sidenav{
     padding: 0;
@@ -480,7 +502,6 @@ h2{
    width: 100%;
 }
 
-/* Ensure full-width sections */
 section {
     width: 100%;
     box-sizing: border-box;
@@ -489,7 +510,7 @@ section {
 .img-same-width {
     width: 1000px; /* Set a fixed width for both images */
     height: auto; /* Maintain aspect ratio */
-}
+} 
 
 .img-fluid {
     max-width: 100%;
@@ -511,8 +532,31 @@ section {
     text-align: center;
 }
 
-/* Optional: Add some padding to the section to prevent content from touching the edges */
 .content {
     padding-top: 50px;
 }
 
+#about {
+    padding: 20px;
+}
+
+.map-responsive {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+}
+
+.map-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.row {
+    width: unset;
+}
