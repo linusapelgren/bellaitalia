@@ -243,6 +243,7 @@ I used my browser tools to check how the page looked on different devices
 - **Paint**: Used to design my site wireframes.
 - **Canva** Used to make assets for my website
 - **Pexels** Used for stock images for the site
+- **Twilio** For sending booking conformations
  
 
 # Deployment
