@@ -25,7 +25,7 @@ SECRET_KEY =  os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['bellaitaliarestaurant-bfa3d8f4d24e.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['bellaitalia-5b37863eb27f.herokuapp.com', 'localhost']
 
 
 # Application definition
